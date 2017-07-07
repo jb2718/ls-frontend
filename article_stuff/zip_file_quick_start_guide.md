@@ -124,7 +124,7 @@ Once you have properly set all of the configuration options, click on the `Creat
 Now, if you go to the directory you set as the target location for the zip file to be output, you should see an icon representing your new zip file.
 
 **Zip file output**
-![Zip file output](https://preview.c9users.io/jb2718/ls_front_end_c9/article_stuff/images/linux_success_msg.png "Zip file output")
+![Zip file output](https://preview.c9users.io/jb2718/ls_front_end_c9/article_stuff/images/linux_zip_output.png "Zip file output")
 
 
 
