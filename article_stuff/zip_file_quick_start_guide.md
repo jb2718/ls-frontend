@@ -88,7 +88,7 @@ Another menu of options will pop up.  In this second menu, you should see an opt
 
 
 
-Once the process completes, you should see a file with a little icon of a zipped up folder in the same directory as the original `my_awesome_site` files.  Its name will be `my_awesome_site.zip` if you created the zip file at the folder level of the project, or it will have the name of one of the selected files in the group that was zipped plus the `.zip` extension.  You can rename the zip file as you normally rename files - just remember to leave the `.zip` extension.
+Once the process completes, you should see a file with a little icon of a zipped up folder in the same directory as the original `my_awesome_site` files.  Its name will be `my_awesome_site.zip` if you created the zip file at the folder level of the project.  If you group selected files instead, it will have the name of one of the selected files in the group plus the `.zip` extension.  You can rename the zip file as you normally rename files - just remember to leave the `.zip` extension.
 
 *\* Note:  You may not see the `.zip` extension depending on the settings of your File Explorer window.  Besides the zipped folder icon, another clue that you have a zip file is that the file type will be "Compressed (zipped) folder"*
 
@@ -121,7 +121,7 @@ Next, right click on the folder (or the group-selected images) to activate a men
 
 A window will pop-up prompting you to make some choices about the archive you will create.  First, you want to decide on the name for your zip file and type that into the "Filename:" text field.  
 
-Next, you will need to make sure that the file type for the file you generate is actually "zip" and not some other file type.  You can do this by clicking on the little black triangle next to the default file extension (in this example, the default file extension is `.tar.gz`).  This will drop down a menu of file extension options.  Search for `.zip` and click on that.  
+Next, you will need to make sure that the file type for the file you generate is actually "zip" and not some other file type.  You can do this by clicking on the little black triangle on the drop down menu to the right of the "Filename:" text field.  This will drop down a menu of file extension options.  Search for `.zip` and click on that.  
 
 Finally, you should choose the destination location for your zip file once it has been generated.
 
@@ -148,4 +148,3 @@ Now, if you go to the directory you set as the destination location for the zip 
 ## Conclusion
 
 Once the zip file has been created for the `my_awesome_site` website, you can simply upload it in an email as if it were one document and send it along to your friend!
-
