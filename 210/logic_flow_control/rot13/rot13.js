@@ -1,4 +1,4 @@
-function isAlpha(char){
+function isAlpha(char) {
   var alphaRegEx = /[A-Za-z]/g;
   return alphaRegEx.test(char);
 }
