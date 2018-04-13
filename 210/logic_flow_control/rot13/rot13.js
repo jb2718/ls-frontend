@@ -1,36 +1,36 @@
 function isAlpha(char){
-	var alphaRegEx = /[A-Za-z]/g;
-	return alphaRegEx.test(char);
+  var alphaRegEx = /[A-Za-z]/g;
+  return alphaRegEx.test(char);
 }
 
 function encodeChar(char) {
-	var upperAMRegEx = /[A-M]/g;
-	var lowerAMRegEx = /[a-m]/g;
+  var upperAMRegEx = /[A-M]/g;
+  var lowerAMRegEx = /[a-m]/g;
 
-	if (upperAMRegEx.test(char) || lowerAMRegEx.test(char)) {
-		return String.fromCharCode(char.charCodeAt(0) + 13);
-	} else {
-		return String.fromCharCode(char.charCodeAt(0) - 13);
-	}
+  if (upperAMRegEx.test(char) || lowerAMRegEx.test(char)) {
+    return String.fromCharCode(char.charCodeAt(0) + 13);
+  } else {
+    return String.fromCharCode(char.charCodeAt(0) - 13);
+  }
 }
 
 function rot13(string) {
-	var chars;
-	var index;
-	var encodedStr;
+  var chars;
+  var index;
+  var encodedStr;
 
-	chars = string.split('');
-	encodedStr = '';
+  chars = string.split('');
+  encodedStr = '';
 
-	for (index = 0; index < string.length; index += 1){
-		if(isAlpha(chars[index])){
-			encodedStr += encodeChar(chars[index]);
-		} else {
-			encodedStr += chars[index];
-		}
-	}
+  for (index = 0; index < string.length; index += 1){
+    if(isAlpha(chars[index])){
+      encodedStr += encodeChar(chars[index]);
+    } else {
+      encodedStr += chars[index];
+    }
+  }
 
-	return encodedStr;
+  return encodedStr;
 }
 
 
