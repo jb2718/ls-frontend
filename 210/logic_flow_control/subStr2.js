@@ -1,36 +1,55 @@
+function isValueNaN(value) {
+  return typeof value === 'number' && isNaN(value);
+}
+
+function adjustStart(start, end, strLen) {
+  // check if start is negative numeric value or NaN
+  if (start < 0 || typeof(start) !== 'number' || isValueNaN(start)) {
+    start = 0;
+  } else if (start === end) {
+    start = 0;
+  } else if (start > strLen) {
+    start = strLen;
+  }
+  return start;
+}
+
+function adjustEnd(start, end, strLen) {
+  // check if end is negative numeric value or NaN
+  if (end < 0 || typeof(end) !== 'number' || isValueNaN(end)) {
+    end = 0;
+  } else if (end === start) {
+    end = 0;
+  } else if (end > strLen) {
+    end = strLen;
+  }
+  return end;
+}
+
 function substring(string, start, end) {
   var newStr = '';
-  var index;
+  var newStart;
+  var newEnd;
   var temp;
 
-  // handle case where start or end are negative/non-integers
-  if (typeof(start) !== 'number' || start < 0) {
-  	start = 0;
+  if (end === undefined) {
+    end = string.length;
   }
 
-  // if (typeof(end) !== 'number' || end < 0) {
-  // 	end = 0;
-  // }
-
-  // adjust the size of the search string indicies
-  if (end === undefined){
-  	index = start;
-  	end = string.length;
-  } else if (start > end) {
-  	index = end;
-  	end = start;
-  } else {
-  	index = start;
+  // if start > end, swap values then
+  // run through the rest of the checks
+  if (start > end) {
+    temp = start;
+    start = end;
+    end = temp;
   }
-  
-  while (index < end){
-  	// if index extends beyond length of orig string, return substring as is
-  	if (index >= string.length) {
-  		return newStr;
-  	} else {
-	  	newStr += string[index];
-	  	index += 1;
-  	}
+
+  newStart = adjustStart(start, end, string.length);
+  newEnd = adjustEnd(start, end, string.length);
+
+  while (newStart < newEnd) {
+    newStr += string[newStart];
+    newStart += 1;
   }
 
   return newStr;
@@ -38,18 +57,12 @@ function substring(string, start, end) {
 
 var string = 'hello world';
 
-// console.log(substring(string, 2, 4));    // "ll"
-// console.log(substring(string, 4, 2));    // "ll"
+console.log(substring(string, 2, 4));    // "ll"
+console.log(substring(string, 4, 2));    // "ll"
 console.log(substring(string, 0, -1));   // ""
 console.log(substring(string, -1, 5));   // "hello"
-// console.log(substring(string, 2));       // "llo world"
+console.log(substring(string, 2));       // "llo world"
 console.log(substring(string, 'a'));     // "hello world"
-// console.log(substring(string, 8, 20));   // "rld"
-// console.log(substring(string, 12, 20));   // ""
-// console.log(substring(string, 3, 3));   // ""
-
-
-
-
-
-// I left off trying to satisfy the NaN condition
+console.log(substring(string, 8, 20));   // "rld"
+console.log(substring(string, 12, 20));   // ""
+console.log(substring(string, 3, 3));   // ""
