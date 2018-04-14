@@ -1,16 +1,17 @@
 function isAlpha(char) {
-  var alphaRegEx = /[A-Za-z]/g;
+  var alphaRegEx = /[A-Za-z]/;
   return alphaRegEx.test(char);
 }
 
 function encodeChar(char) {
-  var upperAMRegEx = /[A-M]/g;
-  var lowerAMRegEx = /[a-m]/g;
+  var upperAMRegEx = /[A-M]/;
+  var lowerAMRegEx = /[a-m]/;
+  const OFFSET = 13;
 
   if (upperAMRegEx.test(char) || lowerAMRegEx.test(char)) {
-    return String.fromCharCode(char.charCodeAt(0) + 13);
+    return String.fromCharCode(char.charCodeAt(0) + OFFSET);
   } else {
-    return String.fromCharCode(char.charCodeAt(0) - 13);
+    return String.fromCharCode(char.charCodeAt(0) - OFFSET);
   }
 }
 
